@@ -1,6 +1,12 @@
 # PySoundCloud
 PySoundCloud is a Python wrapper for the SoundCloud API.
 
+## Installation
+To install the latest version use
+```
+pip install pysoundcloud
+```
+
 ## Basic Usage
 To use PySoundCloud just import the client. This handles all of the interactions with the API
 ```python
