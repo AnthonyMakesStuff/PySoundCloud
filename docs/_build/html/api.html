@@ -1,0 +1,629 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API &mdash; PySoundCloud 2020.6.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Client" href="client.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PySoundCloud
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#client-id">Client ID</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#step-one">Step One</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#step-two">Step Two</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#step-three">Step Three</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic-examples.html">Basic Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic-examples.html#search-for-a-track-download-it">Search For a Track &amp; Download It</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic-examples.html#download-all-tracks-in-a-playlist">Download All Tracks In a Playlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic-examples.html#get-the-id-of-a-playlist">Get The ID of a Playlist</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#soundclouddata">SoundCloudData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudlikedtrack">SoundCloudLikedTrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudlikedtracks">SoundCloudLikedTracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudplaylist">SoundCloudPlaylist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudplaylists">SoundCloudPlaylists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudrelatedtracks">SoundCloudRelatedTracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudsearchresults">SoundCloudSearchResults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#streamformat">StreamFormat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudstream">SoundCloudStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudstreams">SoundCloudStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundcloudtrack">SoundCloudTrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soundclouduser">SoundCloudUser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trackdata">TrackData</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySoundCloud</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p>These are all of the classes in PySoundCloud. Any variable definitions marked <code class="code docutils literal notranslate"><span class="pre">[SC]</span></code> are from SoundCloud’s
+<a class="reference external" href="https://developers.soundcloud.com/docs/api/reference">HTTP API Reference</a>. This may be slightly outdated, and some
+variables are not referenced there, so I’ve <em>tried</em> to explain them myself. Honestly, I think the developers at SoundCloud
+don’t even know what half of them do.</p>
+<div class="section" id="soundclouddata">
+<h2>SoundCloudData<a class="headerlink" href="#soundclouddata" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundclouddata.SoundCloudData">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundclouddata.</code><code class="sig-name descname">SoundCloudData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">requests.models.Response</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundclouddata.SoundCloudData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response_json</strong> – The json from the requests response</p></li>
+<li><p><strong>response_content</strong> – The decoded content of the response</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudlikedtrack">
+<h2>SoundCloudLikedTrack<a class="headerlink" href="#soundcloudlikedtrack" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudlikedtracks.SoundCloudLikedTrack">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudlikedtracks.</code><code class="sig-name descname">SoundCloudLikedTrack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">created_at</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">track</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#pysoundcloud.soundcloudtrack.SoundCloudTrack" title="pysoundcloud.soundcloudtrack.SoundCloudTrack">pysoundcloud.soundcloudtrack.SoundCloudTrack</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudlikedtracks.SoundCloudLikedTrack" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>created_at</strong> – The date &amp; time a track was liked</p></li>
+<li><p><a class="reference internal" href="client.html#pysoundcloud.Client.track" title="pysoundcloud.Client.track"><strong>track</strong></a> – The SoundCloudTrack of the liked track</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudlikedtracks">
+<h2>SoundCloudLikedTracks<a class="headerlink" href="#soundcloudlikedtracks" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudlikedtracks.SoundCloudLikedTracks">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudlikedtracks.</code><code class="sig-name descname">SoundCloudLikedTracks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">requests.models.Response</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudlikedtracks.SoundCloudLikedTracks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="soundcloudplaylist">
+<h2>SoundCloudPlaylist<a class="headerlink" href="#soundcloudplaylist" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudplaylist.SoundCloudPlaylist">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudplaylist.</code><code class="sig-name descname">SoundCloudPlaylist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">album</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudplaylist.SoundCloudPlaylist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>duration</strong> – [SC] Duration in milliseconds</p></li>
+<li><p><strong>permalink_url</strong> – [SC] URL to the SoundCloud.com page</p></li>
+<li><p><strong>reposts_count</strong> – The number of reposts for the playlist</p></li>
+<li><p><strong>genre</strong> – [SC] The genre of the playlist</p></li>
+<li><p><strong>permalink</strong> – [SC] Permalink of the resource</p></li>
+<li><p><strong>purchase_url</strong> – [SC] External purchase link</p></li>
+<li><p><strong>description</strong> – [SC] HTML description</p></li>
+<li><p><strong>uri</strong> – [SC] API resource URL</p></li>
+<li><p><strong>label_name</strong> – [SC] Label name</p></li>
+<li><p><strong>set_type</strong> – (Honestly, no clue – please someone help me)</p></li>
+<li><p><strong>public</strong> – Is the playlist public</p></li>
+<li><p><strong>track_count</strong> – [SC] Number of public tracks</p></li>
+<li><p><strong>user_id</strong> – [SC] User ID of the owner</p></li>
+<li><p><strong>last_modified</strong> – The timestamp the playlist was last modified</p></li>
+<li><p><strong>license</strong> – [SC] Creative common license</p></li>
+<li><p><strong>tracks</strong> – All the tracks in the playlist</p></li>
+<li><p><strong>id</strong> – The ID of the playlist</p></li>
+<li><p><strong>release_date</strong> – (I also don’t know what this is. Maybe the timestamp the playlist was created?)</p></li>
+<li><p><strong>display_date</strong> – (I really have no idea what this is)</p></li>
+<li><p><strong>sharing</strong> – [SC] Public/private sharing</p></li>
+<li><p><strong>created_at</strong> – [SC] timestamp of creation</p></li>
+<li><p><strong>likes_count</strong> – The number of likes the playlist has</p></li>
+<li><p><strong>title</strong> – The title of the playlist</p></li>
+<li><p><strong>purchase_title</strong> – (No clue, and apparently SoundCloud doesn’t know either from their API documentation)</p></li>
+<li><p><strong>managed_by_feeds</strong> – (Also not sure, but I guess it says whether or not the playlist is managed by an RSS feed?)</p></li>
+<li><p><strong>artwork_url</strong> – The URL for the artwork for the playlist</p></li>
+<li><p><strong>is_album</strong> – True if the playlist is an album, false if it is just a playlist</p></li>
+<li><p><strong>user</strong> – A SoundCloudUser with the details of the user</p></li>
+<li><p><strong>published_at</strong> – (Same as created at? Maybe it’s when a private playlist went public?)</p></li>
+<li><p><strong>embeddable_by</strong> – [SC] Who can embed this track or playlist [“all”, “me”, “none”]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pysoundcloud.soundcloudplaylist.SoundCloudPlaylist.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">album</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pysoundcloud.soundcloudplaylist.SoundCloudPlaylist.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – The json dict from the response</p></li>
+<li><p><strong>client_id</strong> – The ID of the client</p></li>
+<li><p><strong>album</strong> – Is this playlist an album</p></li>
+<li><p><strong>parent</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudplaylists">
+<h2>SoundCloudPlaylists<a class="headerlink" href="#soundcloudplaylists" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudplaylists.SoundCloudPlaylists">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudplaylists.</code><code class="sig-name descname">SoundCloudPlaylists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">albums</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudplaylists.SoundCloudPlaylists" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="client.html#pysoundcloud.Client.playlists" title="pysoundcloud.Client.playlists"><strong>playlists</strong></a> – The playlists</p></li>
+<li><p><strong>next_href</strong> – The URL for the next page of results</p></li>
+<li><p><strong>query_urn</strong> – The API resource URL for this query</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudrelatedtracks">
+<h2>SoundCloudRelatedTracks<a class="headerlink" href="#soundcloudrelatedtracks" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudrelatedtracks.SoundCloudRelatedTracks">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudrelatedtracks.</code><code class="sig-name descname">SoundCloudRelatedTracks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudrelatedtracks.SoundCloudRelatedTracks" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tracks</strong> – The related tracks</p></li>
+<li><p><strong>next_href</strong> – The URL for the next page of results</p></li>
+<li><p><strong>query_urn</strong> – The API resource URL for this query</p></li>
+<li><p><strong>variant</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudsearchresults">
+<h2>SoundCloudSearchResults<a class="headerlink" href="#soundcloudsearchresults" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudsearchresults.SoundCloudSearchResults">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudsearchresults.</code><code class="sig-name descname">SoundCloudSearchResults</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">requests.models.Response</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parent</span><span class="p">:</span> <span class="n">pysoundcloud.client.Client</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudsearchresults.SoundCloudSearchResults" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response_json</strong> – The json dict from the response</p></li>
+<li><p><strong>response_content</strong> – The str content from the response</p></li>
+<li><p><strong>url</strong> – The url for the search?</p></li>
+<li><p><strong>total_results</strong> – The total number of results for the search query</p></li>
+<li><p><strong>next_href</strong> – The link to the next page of results</p></li>
+<li><p><strong>results</strong> – All the results for the search query</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="streamformat">
+<h2>StreamFormat<a class="headerlink" href="#streamformat" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudstream.StreamFormat">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudstream.</code><code class="sig-name descname">StreamFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">protocol</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">mime_type</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudstream.StreamFormat" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protocol</strong> – The protocol of the stream</p></li>
+<li><p><strong>mime_type</strong> – The mime type of the stream</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudstream">
+<h2>SoundCloudStream<a class="headerlink" href="#soundcloudstream" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudstream.SoundCloudStream">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudstream.</code><code class="sig-name descname">SoundCloudStream</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">track_data</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#pysoundcloud.trackdata.TrackData" title="pysoundcloud.trackdata.TrackData">pysoundcloud.trackdata.TrackData</a></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudstream.SoundCloudStream" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – The url of the stream</p></li>
+<li><p><strong>preset</strong> – </p></li>
+<li><p><strong>duration</strong> – The duration of the stream (in milleseconds?)</p></li>
+<li><p><strong>snipped</strong> – </p></li>
+<li><p><strong>format</strong> – The format of the stream</p></li>
+<li><p><strong>quality</strong> – </p></li>
+<li><p><strong>client_id</strong> – The ID of the client</p></li>
+<li><p><strong>track_data</strong> – The data of the track</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pysoundcloud.soundcloudstream.SoundCloudStream.download">
+<code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'downloads/'</span></em>, <em class="sig-param"><span class="n">file_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_better_file_name</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_album_data</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">artwork_url</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">artwork_crop_to_square</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pysoundcloud.soundcloudstream.SoundCloudStream.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the stream</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When downloading a stream, it also attempts to download metadata and album artwork for it. The artists is
+the username user who uploaded the track, the title is the track title on SoundCloud and the artwork is
+whatever is provided with the track. It also does a quick check to see if the track appears in any albums.
+If it does, then it gets the first album and then gets album info and artwork from there instead.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location</strong> – The location to download the stream to</p></li>
+<li><p><strong>file_name</strong> – The name of the file</p></li>
+<li><p><strong>use_better_file_name</strong> – If no file name specified, create one using the username and track title?</p></li>
+<li><p><strong>use_album_data</strong> – Use the data of the first album that the track is in</p></li>
+<li><p><strong>artwork_url</strong> – The url of the artwork to use</p></li>
+<li><p><strong>artwork_crop_to_square</strong> – Should the artwork be cropped to a square? (Not currently used)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.soundcloudstream.SoundCloudStream.sanitize_file_name">
+<em class="property">static </em><code class="sig-name descname">sanitize_file_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#pysoundcloud.soundcloudstream.SoundCloudStream.sanitize_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sanitizes the file name as to not create any errors on Windows.
+Hopfully works on other OSes but should be easy to add on to, if not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> – The file name to sanitize</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The sanitized file name</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudstreams">
+<h2>SoundCloudStreams<a class="headerlink" href="#soundcloudstreams" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudstreams.SoundCloudStreams">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudstreams.</code><code class="sig-name descname">SoundCloudStreams</code><a class="headerlink" href="#pysoundcloud.soundcloudstreams.SoundCloudStreams" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>streams</strong> – Contains a list of all the streams</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pysoundcloud.soundcloudstreams.SoundCloudStreams.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">preset</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">snipped</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">format_protocol_progressive</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">format_protocol_hls</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">format_mime_type_mpeg</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">format_mime_type_ogg</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">format_codecs_opus</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pysoundcloud.soundcloudstreams.SoundCloudStreams.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the streams by certain parameters</p>
+<p>Not all of the parameters are currently implemented</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>preset</strong> – Preset string</p></li>
+<li><p><strong>snipped</strong> – Should the stream be snipped?</p></li>
+<li><p><strong>format_protocol_progressive</strong> – Should the stream protocol be progressive?</p></li>
+<li><p><strong>format_protocol_hls</strong> – Should the stream protocol be hls?</p></li>
+<li><p><strong>format_mime_type_mpeg</strong> – Should the stream mime type be mpeg?</p></li>
+<li><p><strong>format_mime_type_ogg</strong> – Should the stream mime type be ogg?</p></li>
+<li><p><strong>format_codecs_opus</strong> – Should the codec be opus?</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list with the streams that match the filters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.soundcloudstreams.SoundCloudStreams.first">
+<code class="sig-name descname">first</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pysoundcloud.soundcloudstream.SoundCloudStream" title="pysoundcloud.soundcloudstream.SoundCloudStream">pysoundcloud.soundcloudstream.SoundCloudStream</a><a class="headerlink" href="#pysoundcloud.soundcloudstreams.SoundCloudStreams.first" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the first stream in the list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The first SoundCloudStream</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.soundcloudstreams.SoundCloudStreams.last">
+<code class="sig-name descname">last</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pysoundcloud.soundcloudstream.SoundCloudStream" title="pysoundcloud.soundcloudstream.SoundCloudStream">pysoundcloud.soundcloudstream.SoundCloudStream</a><a class="headerlink" href="#pysoundcloud.soundcloudstreams.SoundCloudStreams.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the last stream in the list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The last SoundCloudStream</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="soundcloudtrack">
+<h2>SoundCloudTrack<a class="headerlink" href="#soundcloudtrack" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundcloudtrack.SoundCloudTrack">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundcloudtrack.</code><code class="sig-name descname">SoundCloudTrack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">album_index</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">album_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">''</span></em>, <em class="sig-param"><span class="n">playlist_track_index</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundcloudtrack.SoundCloudTrack" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>comment_count</strong> – [SC] Track comment count</p></li>
+<li><p><strong>full_duration</strong> – The full duration of the track (in milliseconds)</p></li>
+<li><p><strong>downloadable</strong> – Is the track downloadable</p></li>
+<li><p><strong>created_at</strong> – [SC] Timestamp of creation</p></li>
+<li><p><strong>description</strong> – [SC] HTML description</p></li>
+<li><p><strong>streams</strong> – SoundCloudStreams with the available streams for the track</p></li>
+<li><p><strong>title</strong> – [SC] Track title</p></li>
+<li><p><strong>duration</strong> – [SC] Duration in milliseconds</p></li>
+<li><p><strong>has_downloads_left</strong> – (No idea)</p></li>
+<li><p><strong>artwork_url</strong> – [SC] URL to a JPEG image</p></li>
+<li><p><strong>public</strong> – Is the track public</p></li>
+<li><p><strong>streamable</strong> – [SC] streamable via API (boolean)</p></li>
+<li><p><strong>genre</strong> – The genre of the track. (Not always an actual genre)</p></li>
+<li><p><strong>id</strong> – The integer ID of the track</p></li>
+<li><p><strong>reposts_count</strong> – The number of reposts the track has</p></li>
+<li><p><strong>state</strong> – [SC] Encoding state (Possible values: “processing”, “failed”, “finished”)</p></li>
+<li><p><strong>label_name</strong> – [SC] Label name</p></li>
+<li><p><strong>last_modified</strong> – The timestamp the track was last edited?</p></li>
+<li><p><strong>commentable</strong> – [SC] Track commentable</p></li>
+<li><p><strong>policy</strong> – (No idea)</p></li>
+<li><p><strong>purchase_url</strong> – [SC] External purchase link</p></li>
+<li><p><strong>sharing</strong> – [SC] Public/private sharing</p></li>
+<li><p><strong>uri</strong> – [SC] API resource URL</p></li>
+<li><p><strong>download_count</strong> – [SC] Track download count</p></li>
+<li><p><strong>likes_count</strong> – The number of likes the track has</p></li>
+<li><p><strong>urn</strong> – (No idea)</p></li>
+<li><p><strong>license</strong> – [SC] Creative common license</p></li>
+<li><p><strong>purchase_title</strong> – (No idea)</p></li>
+<li><p><strong>display_date</strong> – (No idea)</p></li>
+<li><p><strong>embeddable_by</strong> – [SC] Who can embed this track or playlist</p></li>
+<li><p><strong>release_date</strong> – The timestamp the track was published</p></li>
+<li><p><strong>user_id</strong> – The ID of the user who posted the track</p></li>
+<li><p><strong>monetization_model</strong> – (No idea)</p></li>
+<li><p><strong>waveform_url</strong> – URL to the waveform</p></li>
+<li><p><strong>permalink</strong> – [SC] permalink of the resource</p></li>
+<li><p><strong>permalink_url</strong> – [SC] URL to the SoundCloud.com page</p></li>
+<li><p><strong>user</strong> – The SoundCloudUser who uploaded the track</p></li>
+<li><p><strong>playback_count</strong> – [SC] track play count</p></li>
+<li><p><strong>track_index</strong> – The index of the track in the album</p></li>
+<li><p><strong>album_name</strong> – The name of the album</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="soundclouduser">
+<h2>SoundCloudUser<a class="headerlink" href="#soundclouduser" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.soundclouduser.SoundCloudUser">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.soundclouduser.</code><code class="sig-name descname">SoundCloudUser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.soundclouduser.SoundCloudUser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>avatar_url</strong> – [SC] URL to a JPEG image</p></li>
+<li><p><strong>city</strong> – [SC] City</p></li>
+<li><p><strong>comments_count</strong> – The number of public comments</p></li>
+<li><p><strong>country_code</strong> – The country code of the user</p></li>
+<li><p><strong>created_at</strong> – Timestamp the user signed up?</p></li>
+<li><p><strong>description</strong> – [SC] Description</p></li>
+<li><p><strong>followers_count</strong> – [SC] Number of followers</p></li>
+<li><p><strong>followings_count</strong> – [SC] Number of followed users</p></li>
+<li><p><strong>first_name</strong> – The user’s first name</p></li>
+<li><p><strong>last_name</strong> – The user’s last name</p></li>
+<li><p><strong>full_name</strong> – [SC] First and last name</p></li>
+<li><p><strong>groups_count</strong> – Number of groups the user is in</p></li>
+<li><p><strong>id</strong> – The integer ID of the user</p></li>
+<li><p><strong>last_modified</strong> – Timestamp the profile was last edited?</p></li>
+<li><p><strong>likes_count</strong> – Number of likes</p></li>
+<li><p><strong>playlist_likes_count</strong> – Number of playlists liked</p></li>
+<li><p><strong>permalink</strong> – [SC] Permalink of the resource</p></li>
+<li><p><strong>playlist_count</strong> – [SC] Number of public playlists</p></li>
+<li><p><strong>reposts_count</strong> – Number of reposts</p></li>
+<li><p><strong>track_count</strong> – [SC] Number of public tracks</p></li>
+<li><p><strong>uri</strong> – [SC] API resource URL</p></li>
+<li><p><strong>urn</strong> – (No idea)</p></li>
+<li><p><strong>username</strong> – [SC] Username</p></li>
+<li><p><strong>verified</strong> – Is the user verified</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="trackdata">
+<h2>TrackData<a class="headerlink" href="#trackdata" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoundcloud.trackdata.TrackData">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.trackdata.</code><code class="sig-name descname">TrackData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">track_title</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">track_subtitle</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">track_comments</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">track_artists</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">album_artist</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">album_title</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">album_year</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">track_number</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">genre</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">part_of_compilation</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">album_artwork_url</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.trackdata.TrackData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="client.html" class="btn btn-neutral float-left" title="Client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Anthony Provenza
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

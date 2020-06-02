@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Client &mdash; PySoundCloud 2020.6.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Basic Examples" href="basic-examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PySoundCloud
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#client-id">Client ID</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#step-one">Step One</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#step-two">Step Two</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#step-three">Step Three</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic-examples.html">Basic Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic-examples.html#search-for-a-track-download-it">Search For a Track &amp; Download It</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic-examples.html#download-all-tracks-in-a-playlist">Download All Tracks In a Playlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic-examples.html#get-the-id-of-a-playlist">Get The ID of a Playlist</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundclouddata">SoundCloudData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudlikedtrack">SoundCloudLikedTrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudlikedtracks">SoundCloudLikedTracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudplaylist">SoundCloudPlaylist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudplaylists">SoundCloudPlaylists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudrelatedtracks">SoundCloudRelatedTracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudsearchresults">SoundCloudSearchResults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamformat">StreamFormat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudstream">SoundCloudStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudstreams">SoundCloudStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundcloudtrack">SoundCloudTrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#soundclouduser">SoundCloudUser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#trackdata">TrackData</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySoundCloud</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/client.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<p>The client in PySoundCloud contains all of the functions to interface with the SoundCloud API.</p>
+<dl class="py class">
+<dt id="pysoundcloud.Client">
+<em class="property">class </em><code class="sig-prename descclassname">pysoundcloud.</code><code class="sig-name descname">Client</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.Client" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> – The base url for all requests to the SoundCloud API</p></li>
+<li><p><strong>client_id</strong> – The client ID to use with the SoundCloud API</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pysoundcloud.Client.albums">
+<code class="sig-name descname">albums</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">track_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">representation</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'mini'</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">offset</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>bool<span class="p">, </span><a class="reference internal" href="api.html#pysoundcloud.soundcloudplaylists.SoundCloudPlaylists" title="pysoundcloud.soundcloudplaylists.SoundCloudPlaylists">pysoundcloud.soundcloudplaylists.SoundCloudPlaylists</a><span class="p">]</span><a class="headerlink" href="#pysoundcloud.Client.albums" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets albums containing a specified track</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>track_id</strong> – The track ID to find albums containing</p></li>
+<li><p><strong>representation</strong> – The type of representation (either full or mini)</p></li>
+<li><p><strong>limit</strong> – The number of results to return</p></li>
+<li><p><strong>offset</strong> – The start position from 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SoundCloudPlaylists containing the track, or False if response is not 200</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.comments">
+<code class="sig-name descname">comments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.Client.comments" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Add a function to get comments on a specific track or by a specific user</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.liked_tracks">
+<code class="sig-name descname">liked_tracks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">24</span></em>, <em class="sig-param"><span class="n">offset</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>bool<span class="p">, </span><a class="reference internal" href="api.html#pysoundcloud.soundcloudlikedtracks.SoundCloudLikedTracks" title="pysoundcloud.soundcloudlikedtracks.SoundCloudLikedTracks">pysoundcloud.soundcloudlikedtracks.SoundCloudLikedTracks</a><span class="p">]</span><a class="headerlink" href="#pysoundcloud.Client.liked_tracks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the user’s liked tracks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> – The ID of the user to find liked tracks for</p></li>
+<li><p><strong>limit</strong> – The number of results to return</p></li>
+<li><p><strong>offset</strong> – The start position from 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SoundCloudLikedTracks containing all the tracks, or False if response is not 200</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.playlist">
+<code class="sig-name descname">playlist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">playlist_id</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">playlist_url</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">representation</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'full'</span></em>, <em class="sig-param"><span class="n">secret_token</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>bool<span class="p">, </span><a class="reference internal" href="api.html#pysoundcloud.soundcloudplaylist.SoundCloudPlaylist" title="pysoundcloud.soundcloudplaylist.SoundCloudPlaylist">pysoundcloud.soundcloudplaylist.SoundCloudPlaylist</a><span class="p">]</span><a class="headerlink" href="#pysoundcloud.Client.playlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a playlist based on a specified playlist_id or playlist_url</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>playlist_id</strong> – The ID of the playlist</p></li>
+<li><p><strong>playlist_url</strong> – The URL of the playlist</p></li>
+<li><p><strong>representation</strong> – The playlist representation (either fill or mini)</p></li>
+<li><p><strong>secret_token</strong> – An optional secret token</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A SoundCloudPlaylist, or False if response is not 200</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.playlists">
+<code class="sig-name descname">playlists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">track_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">representation</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'mini'</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">offset</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>bool<span class="p">, </span><a class="reference internal" href="api.html#pysoundcloud.soundcloudplaylists.SoundCloudPlaylists" title="pysoundcloud.soundcloudplaylists.SoundCloudPlaylists">pysoundcloud.soundcloudplaylists.SoundCloudPlaylists</a><span class="p">]</span><a class="headerlink" href="#pysoundcloud.Client.playlists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets playlists containing a specified track</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>track_id</strong> – The track ID to find playlists containing</p></li>
+<li><p><strong>representation</strong> – The type of representation (either full or mini)</p></li>
+<li><p><strong>limit</strong> – The number of results to return</p></li>
+<li><p><strong>offset</strong> – The start position from 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SoundCloudPlaylists containing the track, or False if response is not 200</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.related">
+<code class="sig-name descname">related</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">track_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">offset</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>bool<span class="p">, </span><a class="reference internal" href="api.html#pysoundcloud.soundcloudrelatedtracks.SoundCloudRelatedTracks" title="pysoundcloud.soundcloudrelatedtracks.SoundCloudRelatedTracks">pysoundcloud.soundcloudrelatedtracks.SoundCloudRelatedTracks</a><span class="p">]</span><a class="headerlink" href="#pysoundcloud.Client.related" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets tracks related to the specified track_id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>track_id</strong> – The track id to find related tracks for</p></li>
+<li><p><strong>limit</strong> – The number of tracks to find</p></li>
+<li><p><strong>offset</strong> – The number of tracks to search for from zero, so offset 10 and limit 10 means find tracks 10-20</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SoundCloudRelatedTracks with the tracks, or False if response is not 200</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">offset</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>bool<span class="p">, </span><a class="reference internal" href="api.html#pysoundcloud.soundcloudsearchresults.SoundCloudSearchResults" title="pysoundcloud.soundcloudsearchresults.SoundCloudSearchResults">pysoundcloud.soundcloudsearchresults.SoundCloudSearchResults</a><span class="p">]</span><a class="headerlink" href="#pysoundcloud.Client.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search SoundCloud for the specified query
+For some reason it doesn’t always work and I have no clue why</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> – The query to search for</p></li>
+<li><p><strong>limit</strong> – The number of results to return</p></li>
+<li><p><strong>offset</strong> – The start position from 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SoundCloudSearchResults, or False if response is not 200</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.track">
+<code class="sig-name descname">track</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">track_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>bool<span class="p">, </span><a class="reference internal" href="api.html#pysoundcloud.soundcloudtrack.SoundCloudTrack" title="pysoundcloud.soundcloudtrack.SoundCloudTrack">pysoundcloud.soundcloudtrack.SoundCloudTrack</a><span class="p">]</span><a class="headerlink" href="#pysoundcloud.Client.track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets data about the track with the specified track_id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>track_id</strong> – The track id to search for</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a SoundCloudTrack with data about the track, or False if response is not 200</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoundcloud.Client.web_profiles">
+<code class="sig-name descname">web_profiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pysoundcloud.Client.web_profiles" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Add a function to get the “web profiles” of a specific user</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basic-examples.html" class="btn btn-neutral float-left" title="Basic Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Anthony Provenza
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
