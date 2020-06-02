@@ -7,7 +7,18 @@ class SoundCloudRelatedTracks:
     query_urn: str = ""
     variant: str = ""
 
+    """
+    :var tracks: The related tracks
+    :var next_href: The URL for the next page of results
+    :var query_urn: The API resource URL for this query
+    :var variant:
+    """
+
     def __init__(self, data: dict, client_id: str = None):
+        """
+        :param data: The json dict from the response
+        :param client_id: The ID of the client
+        """
         self.index = 0
         self.tracks = list()
         self.next_href = data["next_href"]

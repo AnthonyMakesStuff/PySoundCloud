@@ -27,7 +27,38 @@ class SoundCloudUser:
     username: str = ""
     verified: bool = False
 
+    """
+    :var avatar_url: [SC] URL to a JPEG image
+    :var city: [SC] City
+    :var comments_count: The number of public comments
+    :var country_code: The country code of the user
+    :var created_at: Timestamp the user signed up?
+    :var description: [SC] Description
+    :var followers_count: [SC] Number of followers
+    :var followings_count: [SC] Number of followed users
+    :var first_name: The user's first name
+    :var last_name: The user's last name
+    :var full_name: [SC] First and last name
+    :var groups_count: Number of groups the user is in
+    :var id: The integer ID of the user
+    :var last_modified: Timestamp the profile was last edited?
+    :var likes_count: Number of likes
+    :var playlist_likes_count: Number of playlists liked
+    :var permalink: [SC] Permalink of the resource
+    :var playlist_count: [SC] Number of public playlists
+    :var reposts_count: Number of reposts
+    :var track_count: [SC] Number of public tracks
+    :var uri: [SC] API resource URL
+    :var urn: (No idea)
+    :var username: [SC] Username
+    :var verified: Is the user verified
+    """
+
     def __init__(self, data: dict, client_id: str = None):
+        """
+        :param data: The json dict from the response
+        :param client_id: The ID of the client
+        """
         self.avatar_url = data["avatar_url"]
         self.city = data["city"]
         self.country_code = data["country_code"]

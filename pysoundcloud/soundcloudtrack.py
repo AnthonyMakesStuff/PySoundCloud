@@ -54,6 +54,49 @@ class SoundCloudTrack:
     track_index: int = -1
     album_name: str = ""
 
+    """
+        :var comment_count: [SC] Track comment count
+        :var full_duration: The full duration of the track (in milliseconds)
+        :var downloadable: Is the track downloadable
+        :var created_at: [SC] Timestamp of creation
+        :var description: [SC] HTML description
+        :var streams: SoundCloudStreams with the available streams for the track
+        :var title: [SC] Track title
+        :var duration: [SC] Duration in milliseconds
+        :var has_downloads_left: (No idea)
+        :var artwork_url: [SC] URL to a JPEG image
+        :var public: Is the track public
+        :var streamable: [SC] streamable via API (boolean)
+        :var genre: The genre of the track. (Not always an actual genre)
+        :var id: The integer ID of the track
+        :var reposts_count: The number of reposts the track has
+        :var state: [SC] Encoding state (Possible values: "processing", "failed", "finished")
+        :var label_name: [SC] Label name
+        :var last_modified: The timestamp the track was last edited?
+        :var commentable: [SC] Track commentable
+        :var policy: (No idea)
+        :var purchase_url: [SC] External purchase link
+        :var sharing: [SC] Public/private sharing
+        :var uri: [SC] API resource URL
+        :var download_count: [SC] Track download count
+        :var likes_count: The number of likes the track has
+        :var urn: (No idea)
+        :var license: [SC] Creative common license
+        :var purchase_title: (No idea)
+        :var display_date: (No idea)
+        :var embeddable_by: [SC] Who can embed this track or playlist
+        :var release_date: The timestamp the track was published
+        :var user_id: The ID of the user who posted the track
+        :var monetization_model: (No idea)
+        :var waveform_url: URL to the waveform
+        :var permalink: [SC] permalink of the resource
+        :var permalink_url: [SC] URL to the SoundCloud.com page
+        :var user: The SoundCloudUser who uploaded the track
+        :var playback_count: [SC] track play count
+        :var track_index: The index of the track in the album
+        :var album_name: The name of the album
+        """
+
     def __init__(self,
                  data: dict,
                  client_id: str = None,
@@ -61,6 +104,17 @@ class SoundCloudTrack:
                  album_name: str = "",
                  playlist_track_index: int = -1,
                  parent=None):
+        """
+        Create a SoundCloudTrack from a response's json
+
+        :param data: The json dict from the response
+        :param client_id: The ID of the client
+        :param album_index: The index of this track in an album
+        :param album_name: The name of the album that this track is in
+        :param playlist_track_index: The index of this track in a playlist
+        :param parent:
+        """
+
         self.streams = SoundCloudStreams()
         self.id = data["id"]
         if (parent is not None):

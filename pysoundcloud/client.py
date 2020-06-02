@@ -12,7 +12,13 @@ from pysoundcloud.soundcloudrelatedtracks import SoundCloudRelatedTracks
 
 
 class Client:
-    base_url = "https://api-v2.soundcloud.com/"
+    base_url: str = "https://api-v2.soundcloud.com/"
+    client_id: str = ""
+
+    """
+    :var base_url: The base url for all requests to the SoundCloud API
+    :var client_id: The client ID to use with the SoundCloud API
+    """
 
     def __init__(self, client_id: str) -> None:
         """
@@ -135,9 +141,17 @@ class Client:
         return SoundCloudPlaylists(response.json(), self.client_id)
 
     def comments(self):
+        """
+        .. todo::
+            Add a function to get comments on a specific track or by a specific user
+        """
         pass  # Todo: add comments
 
     def web_profiles(self):
+        """
+        .. todo::
+            Add a function to get the "web profiles" of a specific user
+        """
         pass  # Todo: add web_profiles
 
     def liked_tracks(self,

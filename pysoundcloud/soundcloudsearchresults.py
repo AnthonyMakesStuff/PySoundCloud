@@ -17,7 +17,21 @@ class SoundCloudSearchResults:
     next_href: str = ""
     results: List[Union[SoundCloudUser, SoundCloudTrack, SoundCloudPlaylist]] = list()
 
+    """
+    :var response_json: The json dict from the response
+    :var response_content: The str content from the response
+    :var url: The url for the search?
+    :var total_results: The total number of results for the search query
+    :var next_href: The link to the next page of results
+    :var results: All the results for the search query
+    """
+
     def __init__(self, response: Response, client_id: str = None, parent: "pysoundcloud.client.Client" = None) -> None:
+        """
+        :param response: The requests response
+        :param client_id: The ID of the client
+        :param parent:
+        """
         self.response_json = response.json()
         self.response_content = response.content.decode("utf-8")
         self.url = response.url

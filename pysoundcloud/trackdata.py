@@ -14,6 +14,20 @@ class TrackData:
     part_of_compilation: bool = False
     album_artwork_url: str = ""
 
+    """
+    :var track_title: The title of the track
+    :var track_subtitle: The subtitle of the track
+    :var track_comments: The comments of the track
+    :var track_artists: The artists of the track
+    :var album_artist: The artist of the album
+    :var album_title: The title of the album
+    :var album_year: The year the album was released
+    :var track_number: The track number in the album
+    :var genre: The genre of the track
+    :var part_of_compilation:
+    :var album_artwork_url: The URL of the image for the album artwork
+    """
+
     def __init__(self,
                  track_title: str = None,
                  track_subtitle: str = None,

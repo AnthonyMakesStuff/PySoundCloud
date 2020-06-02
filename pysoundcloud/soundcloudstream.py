@@ -35,6 +35,11 @@ class StreamFormat:
     protocol: str = ""
     mime_type: str = ""
 
+    """
+    :var protocol: The protocol of the stream
+    :var mime_type: The mime type of the stream
+    """
+
     def __init__(self,
                  protocol: str,
                  mime_type: str):
@@ -59,10 +64,26 @@ class SoundCloudStream:
     client_id: str = None
     track_data: TrackData = None
 
+    """
+    :var url: The url of the stream
+    :var preset:
+    :var duration: The duration of the stream (in milleseconds?)
+    :var snipped:
+    :var format: The format of the stream
+    :var quality:
+    :var client_id: The ID of the client
+    :var track_data: The data of the track
+    """
+
     def __init__(self,
                  data: dict,
                  client_id: str = None,
                  track_data: TrackData = None) -> None:
+        """
+        :param data: The json dict from the response
+        :param client_id: The ID of the client
+        :param track_data: The data of the track
+        """
         self.url = data["url"]
         self.track_data = track_data
         if (client_id is not None):
@@ -81,7 +102,24 @@ class SoundCloudStream:
                  use_better_file_name: bool = True,
                  use_album_data: bool = True,
                  artwork_url: str = None,
-                 artwork_crop_to_square: bool = True):
+                 artwork_crop_to_square: bool = True) -> None:
+        """
+        Download the stream
+
+        .. note::
+            When downloading a stream, it also attempts to download metadata and album artwork for it. The artists is
+            the username user who uploaded the track, the title is the track title on SoundCloud and the artwork is
+            whatever is provided with the track. It also does a quick check to see if the track appears in any albums.
+            If it does, then it gets the first album and then gets album info and artwork from there instead.
+
+        :param location: The location to download the stream to
+        :param file_name: The name of the file
+        :param use_better_file_name: If no file name specified, create one using the username and track title?
+        :param use_album_data: Use the data of the first album that the track is in
+        :param artwork_url: The url of the artwork to use
+        :param artwork_crop_to_square: Should the artwork be cropped to a square? (Not currently used)
+        :return: None
+        """
         if (self.client_id is not None):
             response = requests.get(self.url, stream=True)
             if (response.status_code != 200):
@@ -147,6 +185,13 @@ class SoundCloudStream:
 
     @staticmethod
     def sanitize_file_name(file_name: str) -> str:
+        """
+        Sanitizes the file name as to not create any errors on Windows.
+        Hopfully works on other OSes but should be easy to add on to, if not
+
+        :param file_name: The file name to sanitize
+        :return: The sanitized file name
+        """
         file_name = file_name.replace("\\", "")
         file_name = file_name.replace("/", "")
         file_name = file_name.replace(":", "")

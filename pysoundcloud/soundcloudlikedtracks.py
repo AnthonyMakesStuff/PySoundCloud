@@ -8,6 +8,11 @@ class SoundCloudLikedTrack:
     created_at: str = ""
     track: SoundCloudTrack = None
 
+    """
+    :var created_at: The date & time a track was liked
+    :var track: The SoundCloudTrack of the liked track
+    """
+
     def __init__(self,
                  created_at: str,
                  track: SoundCloudTrack):

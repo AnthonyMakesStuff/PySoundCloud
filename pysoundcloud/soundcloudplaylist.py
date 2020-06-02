@@ -41,7 +41,46 @@ class SoundCloudPlaylist:
     published_at: str = ""
     embeddable_by: str = ""
 
+    """
+    :var duration: [SC] Duration in milliseconds
+    :var permalink_url: [SC] URL to the SoundCloud.com page
+    :var reposts_count: The number of reposts for the playlist
+    :var genre: [SC] The genre of the playlist
+    :var permalink: [SC] Permalink of the resource
+    :var purchase_url: [SC] External purchase link
+    :var description: [SC] HTML description
+    :var uri: [SC] API resource URL
+    :var label_name: [SC] Label name
+    :var set_type: (Honestly, no clue -- please someone help me)
+    :var public: Is the playlist public
+    :var track_count: [SC] Number of public tracks
+    :var user_id: [SC] User ID of the owner
+    :var last_modified: The timestamp the playlist was last modified
+    :var license: [SC] Creative common license
+    :var tracks: All the tracks in the playlist
+    :var id: The ID of the playlist
+    :var release_date: (I also don't know what this is. Maybe the timestamp the playlist was created?)
+    :var display_date: (I really have no idea what this is)
+    :var sharing: [SC] Public/private sharing
+    :var created_at: [SC] timestamp of creation
+    :var likes_count: The number of likes the playlist has
+    :var title: The title of the playlist
+    :var purchase_title: (No clue, and apparently SoundCloud doesn't know either from their API documentation)
+    :var managed_by_feeds: (Also not sure, but I guess it says whether or not the playlist is managed by an RSS feed?)
+    :var artwork_url: The URL for the artwork for the playlist
+    :var is_album: True if the playlist is an album, false if it is just a playlist
+    :var user: A SoundCloudUser with the details of the user
+    :var published_at: (Same as created at? Maybe it's when a private playlist went public?)
+    :var embeddable_by: [SC] Who can embed this track or playlist ["all", "me", "none"]
+    """
+
     def __init__(self, data: dict, client_id: str = None, album: bool = False, parent=None) -> None:
+        """
+        :param data: The json dict from the response
+        :param client_id: The ID of the client
+        :param album: Is the playlist actually an album
+        :param parent:
+        """
         self.duration = data["duration"]
         self.permalink_url = data["permalink_url"]
         self.reposts_count = data["reposts_count"]
