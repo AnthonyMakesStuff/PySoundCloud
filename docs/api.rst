@@ -2,6 +2,8 @@
 API
 ===
 
+.. automodule:: pysoundcloud
+
 These are all of the classes in PySoundCloud. Any variable definitions marked :code:`[SC]` are from SoundCloud's
 `HTTP API Reference <https://developers.soundcloud.com/docs/api/reference>`_. This may be slightly outdated, and some
 variables are not referenced there, so I've *tried* to explain them myself. Honestly, I think the developers at SoundCloud
