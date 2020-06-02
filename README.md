@@ -14,6 +14,7 @@ from pysoundcloud import Client
 # Replace this with your client ID
 client = Client("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 ```
+To obtain and API key, just follow [this part](https://pysoundcloud.readthedocs.io/en/latest/getting-started.html#client-id) of the documentation.
 
 From there you can use all of the functions of the client. The following example searches for the track
 `her eyes ekae remix` and then prints the artist of the track and the title
