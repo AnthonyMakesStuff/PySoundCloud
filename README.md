@@ -23,6 +23,7 @@ track_title = results[0].title
 track_artist = results[0].user.username
 print(f"{track_artist} - {track_title}")
 ```
+View the [basic examples](https://pysoundcloud.readthedocs.io/en/latest/basic-examples.html) on Read the Docs for more
 
 ## Useful Links
 - [PyPI Project](https://pypi.org/project/PySoundCloud/)
