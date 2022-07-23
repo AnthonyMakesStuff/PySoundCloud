@@ -6,7 +6,7 @@ For all of these examples, it's assumed that you've imported PySoundCloud and as
 
 .. code-block:: python
 
-    from pysoudcloud import Client
+    from pysoundcloud import Client
     client = Client("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
 Search For a Track & Download It
